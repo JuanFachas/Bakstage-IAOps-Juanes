@@ -6,9 +6,9 @@ Análisis de imagen: Gemini_Generated_Image_yr5380yr5380yr53.png
 ## 🔍 Análisis de IA
 
 ### Servicios AWS Detectados
-- **SERVICE**: diagram-architecture-tmpp09v0u2n (Component)
-- **SERVICE**: cloud-storage-tmpp09v0u2n (Resource)
-- **SERVICE**: api-service-tmpp09v0u2n (Component)
+- **SERVICE**: diagram-architecture-tmpgfy5fsvd (Component)
+- **SERVICE**: cloud-storage-tmpgfy5fsvd (Resource)
+- **SERVICE**: api-service-tmpgfy5fsvd (Component)
 
 ## 📊 Flujo de Procesamiento
 ```
@@ -16,6 +16,6 @@ Análisis de imagen: Gemini_Generated_Image_yr5380yr5380yr53.png
 ```
 
 ## 📅 Información de Generación
-- **Fecha**: 2026-01-16 18:52:01
+- **Fecha**: 2026-01-16 18:53:45
 - **Procesador**: Gemini AI
 - **Plataforma**: Infrastructure AI Platform
