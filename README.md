@@ -1,35 +1,35 @@
-# Infrastructure AI Agent - Templates Repository
+# Infrastructure AI Agent - Template IDP
 
-Este repositorio contiene los archivos YAML generados automáticamente por el AI Agent para el catálogo de Backstage.
+Este repositorio contiene el catálogo de servicios generado automáticamente por el Infrastructure AI Agent.
 
-## Estructura
+## 📁 Estructura
 
 ```
-├── components/     # Componentes de aplicaciones
-├── resources/      # Recursos de infraestructura  
-├── systems/        # Sistemas completos
-└── README.md       # Esta documentación
+├── catalog-info.yaml          # Catálogo principal
+├── entities/                  # Entidades generadas por AI
+│   ├── example-web-app.yaml  # Ejemplo de aplicación web
+│   └── ...                   # Más arquitecturas generadas
+└── README.md                 # Este archivo
 ```
 
-## Uso
+## 🤖 Generación Automática
 
-Los archivos YAML se generan automáticamente cuando:
+Las entidades en `entities/` son generadas automáticamente por el AI Agent cuando:
 
-1. Se envía un diagrama o descripción al AI Agent
-2. El agente procesa con Gemini AI
-3. Se genera YAML válido para Backstage
-4. Se hace commit automático a este repositorio
-5. Backstage detecta los cambios y actualiza el catálogo
+1. Se procesa una descripción de texto de arquitectura
+2. Se analiza un diagrama de arquitectura
+3. Se valida y guarda en este repositorio
+4. Backstage las importa automáticamente
 
-## Integración con Backstage
+## 🔗 Integración
 
-Este repositorio está configurado en Backstage para:
-- Monitoreo automático de cambios
-- Importación de nuevos componentes
-- Actualización del catálogo cada 5 minutos
+- **AI Agent**: http://localhost:8000
+- **Backstage**: http://localhost:3000
+- **Repositorio**: https://github.com/giovanemere/demo-infra-ai-agent-template-idp
 
-## AI Agent
+## 📊 Uso
 
-- **Repositorio**: https://github.com/giovanemere/demo-infra-ai-agent
-- **API**: http://localhost:8000
-- **Docs**: http://localhost:8000/docs
+1. Accede al AI Agent en http://localhost:8000
+2. Describe tu arquitectura o sube un diagrama
+3. El YAML se genera y guarda automáticamente aquí
+4. Backstage lo importa y muestra en el catálogo
