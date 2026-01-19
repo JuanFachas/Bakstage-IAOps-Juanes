@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: developers
+  description: Development team for Infrastructure AI Platform
+spec:
+  type: team
+  children: []
