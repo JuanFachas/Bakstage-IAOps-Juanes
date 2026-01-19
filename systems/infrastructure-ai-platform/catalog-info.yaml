@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: infrastructure-ai-platform
+  description: AI-powered infrastructure analysis and template generation platform
+  tags:
+    - ai
+    - infrastructure
+    - platform
+  annotations:
+    github.com/project-slug: giovanemere/demo-infra-ai-agent-template-idp
+    backstage.io/techdocs-ref: dir:../../docs
+spec:
+  owner: group:default/developers
+  domain: platform

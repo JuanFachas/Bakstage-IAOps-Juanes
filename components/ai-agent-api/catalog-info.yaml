@@ -1,0 +1,69 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: ai-agent-api
+  description: REST API for AI-powered infrastructure analysis
+  tags:
+    - rest
+    - ai
+    - infrastructure
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:default/developers
+  system: infrastructure-ai-platform
+  definition: |
+    openapi: 3.0.0
+    info:
+      title: AI Agent API
+      version: 1.0.0
+      description: API for processing infrastructure descriptions with AI
+    servers:
+      - url: http://localhost:8000
+        description: Development server
+    paths:
+      /process-text:
+        post:
+          summary: Process text description
+          description: Analyze infrastructure description and generate Backstage YAML
+          requestBody:
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    description:
+                      type: string
+                      description: Infrastructure description text
+          responses:
+            '200':
+              description: Successful processing
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                      yaml_content:
+                        type: string
+                      project_id:
+                        type: string
+      /process-image:
+        post:
+          summary: Process image
+          description: Analyze infrastructure diagram and generate Backstage YAML
+          requestBody:
+            required: true
+            content:
+              multipart/form-data:
+                schema:
+                  type: object
+                  properties:
+                    image:
+                      type: string
+                      format: binary
+          responses:
+            '200':
+              description: Successful processing

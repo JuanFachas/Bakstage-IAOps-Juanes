@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ai-agent
+  title: Infrastructure AI Agent
+  description: AI Agent for processing infrastructure descriptions using Gemini API
+  tags:
+    - ai
+    - backend
+    - python
+    - fastapi
+    - gemini
+  annotations:
+    github.com/project-slug: giovanemere/demo-infra-ai-agent
+    backstage.io/techdocs-ref: dir:../../docs/ai-agent
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/developers
+  system: infrastructure-ai-platform
+  providesApis:
+    - ai-agent-api
+  dependsOn:
+    - resource:default/gemini-api
+    - resource:default/postgresql
