@@ -1,0 +1,65 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: ai-project-9578
+  title: Ai Project 9578
+  description: Sistema de machine learning para recomendaciones: SageMaker para entrenamiento de modelos, Lambda pa...
+  annotations:
+    backstage.io/managed-by-location: url:https://github.com/giovanemere/demo-infra-ai-agent-template-idp/tree/main/projects/ai-project-9578/
+    aws.com/cost-center: free-tier-audit
+spec:
+  owner: platform-team
+  domain: cloud-infrastructure
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: detected-architecture-api
+  description: API Gateway - Sistema de machine learning para recomendaciones: SageMaker para entrenamiento de modelos, Lambda para inferencia en tiempo real, API Gateway para endpoints ML, DynamoDB para perfiles de usuarios, S3 para datasets y modelos, Kinesis Analytics para análisis de comportamiento, ElastiCache para caché de recomendaciones, y CloudWatch para métricas de modelo. Debe procesar millones de recomendaciones por día.
+  annotations:
+    aws.com/cost-center: free-tier-audit
+spec:
+  type: rest-api
+  lifecycle: experimental
+  owner: platform-team
+  system: detected-architecture
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: detected-architecture-lambda
+  description: Lambda Function - Sistema de machine learning para recomendaciones: SageMaker para entrenamiento de modelos, Lambda para inferencia en tiempo real, API Gateway para endpoints ML, DynamoDB para perfiles de usuarios, S3 para datasets y modelos, Kinesis Analytics para análisis de comportamiento, ElastiCache para caché de recomendaciones, y CloudWatch para métricas de modelo. Debe procesar millones de recomendaciones por día.
+  annotations:
+    aws.com/cost-center: free-tier-audit
+    aws.com/service-type: lambda
+spec:
+  type: service
+  lifecycle: experimental
+  owner: platform-team
+  system: detected-architecture
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: detected-architecture-dynamodb
+  description: DynamoDB Database - Sistema de machine learning para recomendaciones: SageMaker para entrenamiento de modelos, Lambda para inferencia en tiempo real, API Gateway para endpoints ML, DynamoDB para perfiles de usuarios, S3 para datasets y modelos, Kinesis Analytics para análisis de comportamiento, ElastiCache para caché de recomendaciones, y CloudWatch para métricas de modelo. Debe procesar millones de recomendaciones por día.
+  annotations:
+    aws.com/cost-center: free-tier-audit
+    aws.com/service-type: dynamodb
+spec:
+  type: database
+  owner: platform-team
+  system: detected-architecture
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: detected-architecture-s3
+  description: S3 Storage - Sistema de machine learning para recomendaciones: SageMaker para entrenamiento de modelos, Lambda para inferencia en tiempo real, API Gateway para endpoints ML, DynamoDB para perfiles de usuarios, S3 para datasets y modelos, Kinesis Analytics para análisis de comportamiento, ElastiCache para caché de recomendaciones, y CloudWatch para métricas de modelo. Debe procesar millones de recomendaciones por día.
+  annotations:
+    aws.com/cost-center: free-tier-audit
+    aws.com/service-type: s3
+spec:
+  type: storage
+  owner: platform-team
+  system: detected-architecture
