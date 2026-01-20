@@ -1,0 +1,52 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: ai-project-2832
+  title: Ai Project 2832
+  description: Sistema de análisis de datos en tiempo real con Kinesis Data Streams para ingesta, Lambda para proce...
+  annotations:
+    backstage.io/managed-by-location: url:https://github.com/giovanemere/demo-infra-ai-agent-template-idp/tree/main/projects/ai-project-2832/
+    aws.com/cost-center: free-tier-audit
+spec:
+  owner: platform-team
+  domain: cloud-infrastructure
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: detected-architecture-lambda
+  description: Lambda Function - Sistema de análisis de datos en tiempo real con Kinesis Data Streams para ingesta, Lambda para procesamiento, Elasticsearch para búsquedas, RDS PostgreSQL para datos estructurados, S3 para data lake, Glue para ETL, Athena para consultas, QuickSight para dashboards, y CloudWatch para monitoreo completo. Necesita ser altamente disponible y escalable.
+  annotations:
+    aws.com/cost-center: free-tier-audit
+    aws.com/service-type: lambda
+spec:
+  type: service
+  lifecycle: experimental
+  owner: platform-team
+  system: detected-architecture
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: detected-architecture-rds
+  description: RDS Database - Sistema de análisis de datos en tiempo real con Kinesis Data Streams para ingesta, Lambda para procesamiento, Elasticsearch para búsquedas, RDS PostgreSQL para datos estructurados, S3 para data lake, Glue para ETL, Athena para consultas, QuickSight para dashboards, y CloudWatch para monitoreo completo. Necesita ser altamente disponible y escalable.
+  annotations:
+    aws.com/cost-center: free-tier-audit
+    aws.com/service-type: rds
+spec:
+  type: database
+  owner: platform-team
+  system: detected-architecture
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: detected-architecture-s3
+  description: S3 Storage - Sistema de análisis de datos en tiempo real con Kinesis Data Streams para ingesta, Lambda para procesamiento, Elasticsearch para búsquedas, RDS PostgreSQL para datos estructurados, S3 para data lake, Glue para ETL, Athena para consultas, QuickSight para dashboards, y CloudWatch para monitoreo completo. Necesita ser altamente disponible y escalable.
+  annotations:
+    aws.com/cost-center: free-tier-audit
+    aws.com/service-type: s3
+spec:
+  type: storage
+  owner: platform-team
+  system: detected-architecture
