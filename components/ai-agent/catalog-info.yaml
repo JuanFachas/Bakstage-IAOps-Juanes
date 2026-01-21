@@ -3,16 +3,15 @@ kind: Component
 metadata:
   name: ai-agent
   title: Infrastructure AI Agent
-  description: AI Agent for processing infrastructure descriptions using Gemini API
+  description: Servicio de IA para generación automática de templates AWS
   tags:
     - ai
-    - backend
-    - python
     - fastapi
+    - python
     - gemini
   annotations:
     github.com/project-slug: giovanemere/demo-infra-ai-agent
-    backstage.io/techdocs-ref: dir:../../docs/ai-agent
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   lifecycle: production
@@ -21,5 +20,5 @@ spec:
   providesApis:
     - ai-agent-api
   dependsOn:
-    - resource:default/gemini-api
-    - resource:default/postgresql
+    - resource:gemini-api
+    - resource:postgresql-db

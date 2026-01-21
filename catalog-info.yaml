@@ -3,22 +3,15 @@ kind: Location
 metadata:
   name: infrastructure-ai-templates
   title: Infrastructure AI Platform Templates
-  description: Templates y componentes generados automáticamente por IA
+  description: Templates AWS generados automáticamente por IA
   annotations:
-    backstage.io/managed-by-location: url:https://github.com/giovanemere/demo-infra-ai-agent-template-idp/blob/main/catalog-info.yaml
     github.com/project-slug: giovanemere/demo-infra-ai-agent-template-idp
 spec:
   targets:
-    # Templates generados automáticamente
+    # Templates AWS
     - ./templates/*/template.yaml
-    # Componentes del catálogo
+    # Componentes del sistema
     - ./components/*/catalog-info.yaml
-    # Sistemas de infraestructura
-    - ./systems/*/catalog-info.yaml
-    # Recursos AWS
-    - ./resources/*/catalog-info.yaml
-    # Proyectos generados
-    - ./projects/*/catalog-info.yaml
 ---
 apiVersion: backstage.io/v1alpha1
 kind: System

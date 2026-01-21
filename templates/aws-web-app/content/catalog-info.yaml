@@ -2,15 +2,57 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: ${{ values.name }}
+  title: ${{ values.name | title }}
   description: ${{ values.description }}
   tags:
-  - aws
-  - generated-from-template
+    - aws
+    - web-app
+    - ${{ values.environment }}
   annotations:
     github.com/project-slug: giovanemere/${{ values.name }}
-    backstage.io/techdocs-ref: dir:.
+    aws.com/region: ${{ values.aws_region }}
+    aws.com/environment: ${{ values.environment }}
 spec:
   type: service
-  lifecycle: production
-  owner: ${{ values.owner }}
-  system: aws-platform
+  lifecycle: experimental
+  owner: group:default/developers
+  system: infrastructure-ai-platform
+  providesApis:
+    - ${{ values.name }}-api
+  dependsOn:
+    - resource:${{ values.name }}-database
+    - resource:${{ values.name }}-storage
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: ${{ values.name }}-api
+  title: ${{ values.name | title }} API
+  description: API REST para ${{ values.description }}
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: group:default/developers
+  system: infrastructure-ai-platform
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ${{ values.name }}-database
+  title: ${{ values.name | title }} Database
+  description: Base de datos RDS para ${{ values.name }}
+spec:
+  type: database
+  owner: group:default/developers
+  system: infrastructure-ai-platform
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ${{ values.name }}-storage
+  title: ${{ values.name | title }} Storage
+  description: Almacenamiento S3 para ${{ values.name }}
+spec:
+  type: storage
+  owner: group:default/developers
+  system: infrastructure-ai-platform

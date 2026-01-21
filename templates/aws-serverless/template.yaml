@@ -1,14 +1,14 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: aws-web-app
-  title: AWS Web Application
-  description: Aplicación web completa en AWS con S3, CloudFront, Lambda y RDS
+  name: aws-serverless
+  title: AWS Serverless Application
+  description: Aplicación serverless con Lambda, API Gateway y DynamoDB
   tags:
     - recommended
     - aws
-    - web
-    - fullstack
+    - serverless
+    - lambda
 spec:
   owner: group:default/developers
   type: service
@@ -23,41 +23,33 @@ spec:
           type: string
           description: Nombre único para el proyecto
           pattern: '^[a-zA-Z0-9-]+$'
-          maxLength: 50
         description:
           title: Descripción
           type: string
           description: Descripción breve del proyecto
-          maxLength: 200
         
     - title: Configuración AWS
       required:
         - aws_region
-        - environment
       properties:
         aws_region:
           title: Región AWS
           type: string
-          description: Región donde desplegar la infraestructura
+          description: Región donde desplegar
           default: us-east-1
           enum:
             - us-east-1
             - us-west-2
             - eu-west-1
-            - ap-southeast-1
-        environment:
-          title: Ambiente
+        runtime:
+          title: Runtime de Lambda
           type: string
-          description: Ambiente de despliegue
-          default: dev
+          description: Runtime para las funciones Lambda
+          default: nodejs18.x
           enum:
-            - dev
-            - staging
-            - prod
-        domain_name:
-          title: Dominio (Opcional)
-          type: string
-          description: Dominio personalizado para la aplicación
+            - nodejs18.x
+            - python3.9
+            - python3.11
 
   steps:
     - id: fetch
@@ -69,15 +61,14 @@ spec:
           name: ${{ parameters.name }}
           description: ${{ parameters.description }}
           aws_region: ${{ parameters.aws_region }}
-          environment: ${{ parameters.environment }}
-          domain_name: ${{ parameters.domain_name }}
+          runtime: ${{ parameters.runtime }}
     
     - id: publish
       name: Publish to GitHub
       action: publish:github
       input:
         allowedHosts: ['github.com']
-        description: 'AWS Web App: ${{ parameters.description }}'
+        description: 'AWS Serverless: ${{ parameters.description }}'
         repoUrl: github.com?owner=giovanemere&repo=${{ parameters.name }}
         defaultBranch: main
     
@@ -95,6 +86,3 @@ spec:
       - title: Open in Catalog
         icon: catalog
         entityRef: ${{ steps.register.output.entityRef }}
-      - title: AWS Console
-        url: https://console.aws.amazon.com/
-        icon: cloud

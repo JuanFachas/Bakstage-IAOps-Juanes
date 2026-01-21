@@ -1,15 +1,33 @@
 # Infrastructure AI Platform
 
-## Overview
-The Infrastructure AI Platform automatically analyzes AWS architecture descriptions and generates Backstage catalog entries.
+Plataforma de IA para generación automática de templates de infraestructura AWS.
 
-## Components
-- **AI Agent**: FastAPI backend with Gemini AI integration
-- **Backstage IDP**: Internal Developer Platform
-- **PostgreSQL**: Database for persistence
+## Componentes
 
-## Quick Start
-1. Access AI Agent at http://localhost:8000
-2. Configure GitHub repository
-3. Process architecture description
-4. View in Backstage catalog
+- **AI Agent**: Servicio principal de procesamiento de IA
+- **Backstage IDP**: Portal de desarrolladores
+- **Templates**: Plantillas AWS generadas automáticamente
+
+## Templates Disponibles
+
+### AWS Web Application
+Aplicación web completa con:
+- Frontend en S3 + CloudFront
+- Backend en Lambda
+- Base de datos RDS
+- API Gateway
+
+### AWS Serverless
+Aplicación serverless con:
+- Funciones Lambda
+- API Gateway
+- DynamoDB
+- S3 Storage
+
+## Uso
+
+1. Accede a Backstage
+2. Ve a "Create"
+3. Selecciona un template
+4. Completa los parámetros
+5. ¡Listo!

@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.name }}
+  title: ${{ values.name | title }}
+  description: ${{ values.description }}
+  tags:
+    - aws
+    - serverless
+    - lambda
+  annotations:
+    github.com/project-slug: giovanemere/${{ values.name }}
+    aws.com/region: ${{ values.aws_region }}
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:default/developers
+  system: infrastructure-ai-platform

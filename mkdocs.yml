@@ -1,25 +1,10 @@
 site_name: Infrastructure AI Platform
-site_description: AI-powered infrastructure analysis and template generation
+site_description: Templates AWS generados automáticamente por IA
 
 nav:
   - Home: index.md
-  - Architecture: architecture.md
-  - Components:
-    - AI Agent: ai-agent/index.md
-    - Backstage IDP: backstage-idp/index.md
-  - API Reference: api.md
-  - Configuration: configuration.md
 
 theme:
   name: material
   palette:
     primary: blue
-    accent: blue
-
-plugins:
-  - techdocs-core
-
-markdown_extensions:
-  - admonition
-  - codehilite
-  - pymdownx.superfences
