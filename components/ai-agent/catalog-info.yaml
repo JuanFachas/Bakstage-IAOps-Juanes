@@ -11,14 +11,9 @@ metadata:
     - gemini
   annotations:
     github.com/project-slug: giovanemere/demo-infra-ai-agent
-    backstage.io/techdocs-ref: dir:.
+    backstage.io/techdocs-ref: dir:./docs
 spec:
   type: service
   lifecycle: production
   owner: group:default/developers
   system: infrastructure-ai-platform
-  providesApis:
-    - ai-agent-api
-  dependsOn:
-    - resource:gemini-api
-    - resource:postgresql-db
