@@ -59,7 +59,7 @@ spec:
       input:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
-        repoUrl: github.com?owner=giovanemere&repo=${{ parameters.name }}
+        repoUrl: github.com?owner=JuanFachas&repo=${{ parameters.name }}
     - id: register
       name: Register
       action: catalog:register

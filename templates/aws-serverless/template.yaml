@@ -69,7 +69,7 @@ spec:
       input:
         allowedHosts: ['github.com']
         description: 'AWS Serverless: ${{ parameters.description }}'
-        repoUrl: github.com?owner=giovanemere&repo=${{ parameters.name }}
+        repoUrl: github.com?owner=JuanFachas&repo=${{ parameters.name }}
         defaultBranch: main
     
     - id: register

@@ -71,7 +71,7 @@ spec:
       input:
         allowedHosts: ['github.com']
         description: 'AWS Web App: ${{ parameters.name }}'
-        repoUrl: github.com?owner=giovanemere&repo=${{ parameters.name }}
+        repoUrl: github.com?owner=JuanFachas&repo=${{ parameters.name }}
         defaultBranch: main
     
     - id: register
