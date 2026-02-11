@@ -5,7 +5,7 @@ metadata:
   title: Infrastructure AI Platform Templates
   description: Templates AWS generados automáticamente por IA
   annotations:
-    github.com/project-slug: giovanemere/demo-infra-ai-agent-template-idp
+    github.com/project-slug: JuanFachas/Bakstage-IAOps-Juanes
 spec:
   targets:
     # Templates AWS
@@ -31,7 +31,7 @@ metadata:
     - infrastructure
     - backstage
   annotations:
-    github.com/project-slug: giovanemere/demo-infra-ai-agent-template-idp
+    github.com/project-slug: JuanFachas/Bakstage-IAOps-Juanes
 spec:
   owner: group:default/developers
   domain: cloud-infrastructure
