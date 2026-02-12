@@ -9,7 +9,7 @@ metadata:
     - serverless
     - lambda
   annotations:
-    github.com/project-slug: giovanemere/${{ values.name }}
+    github.com/project-slug: JuanFachas/${{ values.name }}
     aws.com/region: ${{ values.aws_region }}
 spec:
   type: service

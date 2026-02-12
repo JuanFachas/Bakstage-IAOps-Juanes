@@ -11,7 +11,7 @@ metadata:
     - cloudfront
     - ${{ values.environment }}
   annotations:
-    github.com/project-slug: giovanemere/${{ values.name }}
+    github.com/project-slug: JuanFachas/${{ values.name }}
     backstage.io/techdocs-ref: dir:.
     aws.com/region: ${{ values.aws_region }}
     aws.com/environment: ${{ values.environment }}

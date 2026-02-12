@@ -5,7 +5,7 @@ metadata:
   title: ${{ values.name }}
   description: ${{ values.description }}
   annotations:
-    github.com/project-slug: giovanemere/${{ values.name }}
+    github.com/project-slug: JuanFachas/${{ values.name }}
     backstage.io/techdocs-ref: dir:.
   tags:
     - ai-generated

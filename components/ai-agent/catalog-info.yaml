@@ -10,7 +10,7 @@ metadata:
     - python
     - gemini
   annotations:
-    github.com/project-slug: giovanemere/demo-infra-ai-agent
+    github.com/project-slug: JuanFachas/Bakstage-IAOps-Juanes
     backstage.io/techdocs-ref: dir:./docs
 spec:
   type: service

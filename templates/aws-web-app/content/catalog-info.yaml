@@ -9,7 +9,7 @@ metadata:
     - web-app
     - ${{ values.environment }}
   annotations:
-    github.com/project-slug: giovanemere/${{ values.name }}
+    github.com/project-slug: JuanFachas/${{ values.name }}
     aws.com/region: ${{ values.aws_region }}
     aws.com/environment: ${{ values.environment }}
 spec:
