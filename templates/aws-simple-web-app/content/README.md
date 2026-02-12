@@ -53,7 +53,7 @@ ${{ values.description }}
 - **CloudFront Console**: [CloudFront Console](https://console.aws.amazon.com/cloudfront/)
 
 ## 🔗 Enlaces
-- [Repositorio](https://github.com/giovanemere/${{ values.name }})
+- [Repositorio](https://github.com/JuanFachas/${{ values.name }})
 - [AWS Console](https://console.aws.amazon.com/)
 - [Backstage Catalog](http://localhost:3000/catalog/default/component/${{ values.name }})
 
